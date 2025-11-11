@@ -2,6 +2,45 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+  const galleryImages = [
+    'IMG-20251111-WA0002.jpg',
+    'IMG-20251111-WA0003.jpg',
+    'IMG-20251111-WA0004.jpg',
+    'IMG-20251111-WA0005.jpg',
+    'IMG-20251111-WA0006.jpg',
+    'IMG-20251111-WA0007.jpg',
+    'IMG-20251111-WA0008.jpg',
+    'IMG-20251111-WA0009.jpg',
+    'IMG-20251111-WA0010.jpg',
+    'IMG-20251111-WA0011.jpg',
+    'IMG-20251111-WA0012.jpg',
+    'IMG-20251111-WA0013.jpg',
+    'IMG-20251111-WA0014.jpg',
+    'IMG-20251111-WA0015.jpg',
+    'IMG-20251111-WA0016.jpg',
+    'IMG-20251111-WA0017.jpg',
+    'IMG-20251111-WA0018.jpg',
+    'IMG-20251111-WA0019.jpg',
+    'IMG-20251111-WA0020.jpg',
+    'IMG-20251111-WA0021.jpg',
+    'IMG-20251111-WA0022.jpg',
+    'IMG-20251111-WA0023.jpg',
+    'IMG-20251111-WA0024.jpg',
+    'IMG-20251111-WA0025.jpg',
+    'IMG-20251111-WA0026.jpg',
+    'IMG-20251111-WA0027.jpg',
+    'IMG-20251111-WA0028.jpg',
+    'IMG-20251111-WA0029.jpg',
+    'IMG-20251111-WA0030.jpg',
+    'IMG-20251111-WA0032.jpg',
+    'IMG-20251111-WA0033.jpg',
+  ]
+
+  // Split images into 3 rows
+  const row1 = galleryImages.slice(0, 11)
+  const row2 = galleryImages.slice(11, 21)
+  const row3 = galleryImages.slice(21, 31)
+
   return (
     <div>
       {/* Hero Section */}
@@ -9,7 +48,7 @@ const Home = () => {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(/images/hero.jpg)',
+            backgroundImage: 'url(/images/hero2.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'top center',
           }}
@@ -72,10 +111,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Coffee Image - Between Hero and Next Section */}
-      <div className="relative">
+      {/* Coffee Image - Mobile Only */}
+      <div className="relative lg:hidden">
         <div 
-          className="absolute right-0 z-20 w-3/4 md:w-3/5 lg:w-1/2 animate-slide-in-right"
+          className="absolute right-0 z-20 w-3/4 md:w-3/5 animate-slide-in-right"
           style={{
             top: '50%',
           }}
@@ -225,6 +264,111 @@ const Home = () => {
             >
               View All Locations →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section - Customer Experience */}
+      <section className="py-24 bg-rich-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-soft-gold rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-coffee-brown rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
+              Captured Moments
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display mb-6 leading-tight">
+              Where Coffee Meets<br />
+              <span className="italic text-soft-gold">Community</span>
+            </h2>
+            <p className="text-warm-cream/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-4">
+              Every cup tells a story. From early morning meetings to afternoon coffee breaks, 
+              our customers capture the moments that matter.
+            </p>
+            <p className="text-warm-cream/80 leading-relaxed max-w-2xl mx-auto italic">
+              "More than just coffee — it's the daily ritual that fuels productivity, 
+              sparks conversation, and creates connection."
+            </p>
+          </div>
+
+          {/* Gallery Grid */}
+          <div className="space-y-6 overflow-hidden">
+            {/* Row 1 */}
+            <div className="flex gap-4">
+              <div className="flex gap-4 animate-scroll-left">
+                {[...row1, ...row1].map((img, index) => (
+                  <div 
+                    key={`row1-${index}`} 
+                    className="relative w-64 h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
+                  >
+                    <img
+                      src={`/images/gallary/${img}`}
+                      alt={`noa's Café Experience`}
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Row 2 */}
+            <div className="flex gap-4">
+              <div className="flex gap-4 animate-scroll-right-slow">
+                {[...row2, ...row2].map((img, index) => (
+                  <div 
+                    key={`row2-${index}`} 
+                    className="relative w-64 h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
+                  >
+                    <img
+                      src={`/images/gallary/${img}`}
+                      alt={`noa's Café Experience`}
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Row 3 */}
+            <div className="flex gap-4">
+              <div className="flex gap-4 animate-scroll-left-slower">
+                {[...row3, ...row3].map((img, index) => (
+                  <div 
+                    key={`row3-${index}`} 
+                    className="relative w-64 h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
+                  >
+                    <img
+                      src={`/images/gallary/${img}`}
+                      alt={`noa's Café Experience`}
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <p className="text-warm-cream/90 text-lg mb-6">
+              Share your noa's moment with us
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center items-center">
+              <span className="text-soft-gold text-sm uppercase tracking-wider">#noascafe</span>
+              <span className="text-warm-cream/40">•</span>
+              <span className="text-soft-gold text-sm uppercase tracking-wider">#specialtycoffee</span>
+              <span className="text-warm-cream/40">•</span>
+              <span className="text-soft-gold text-sm uppercase tracking-wider">#coffeecommunity</span>
+            </div>
           </div>
         </div>
       </section>

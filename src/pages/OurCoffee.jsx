@@ -65,11 +65,11 @@ const OurCoffee = () => {
                   Every batch is slow-roasted in Surrey using methods that highlight origin flavour, aroma and balance. Our roasting team ensures your cup tastes as smooth and consistent in Farringdon as it does in Stockley Park.
                 </p>
               </div>
-              <div className="relative h-[400px] overflow-hidden">
+              <div className="relative h-[500px] overflow-hidden">
                 <img
-                  src="https://static.wixstatic.com/media/11062b_989b50976b7f4f6c87b8579f5f4e1104~mv2.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Black%20Coffee.jpg"
+                  src="/images/ourcoffee1.jpg"
                   alt="Coffee Roasting"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>
@@ -141,9 +141,9 @@ const OurCoffee = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div className="order-2 md:order-1">
                 <img
-                  src="https://static.wixstatic.com/media/11062b_0d0f1f9ac51a404b86916cfba22bdb83~mv2.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Morning%20Coffee.jpg"
+                  src="/images/ourcoffee2.jpg"
                   alt="Coffee Sourcing"
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[500px] object-contain"
                   loading="lazy"
                 />
               </div>
