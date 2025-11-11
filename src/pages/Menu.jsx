@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Menu = () => {
   return (
@@ -17,7 +18,13 @@ const Menu = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
               Our Menu
             </span>
@@ -40,14 +47,20 @@ const Menu = () => {
                 View Full Menu on Flipdish →
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Menu Highlights */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
               What We Offer
             </span>
@@ -55,10 +68,16 @@ const Menu = () => {
               Menu<br />
               <span className="italic text-coffee-brown">Highlights</span>
             </h2>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-center"
+            >
               <div className="mb-4">
                 <span className="text-5xl">☕</span>
               </div>
@@ -66,9 +85,15 @@ const Menu = () => {
               <p className="text-rich-black/70 text-sm">
                 Roasted in-house, brewed to perfection
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-center"
+            >
               <div className="mb-4">
                 <span className="text-5xl">🥪</span>
               </div>
@@ -76,9 +101,15 @@ const Menu = () => {
               <p className="text-rich-black/70 text-sm">
                 Made daily with premium ingredients
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-center"
+            >
               <div className="mb-4">
                 <span className="text-5xl">🥗</span>
               </div>
@@ -86,9 +117,15 @@ const Menu = () => {
               <p className="text-rich-black/70 text-sm">
                 Balanced, fresh and flavorful
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center"
+            >
               <div className="mb-4">
                 <span className="text-5xl">🥐</span>
               </div>
@@ -96,7 +133,7 @@ const Menu = () => {
               <p className="text-rich-black/70 text-sm">
                 Breakfast treats and snacks
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -104,7 +141,13 @@ const Menu = () => {
       {/* Nutrition & Allergens */}
       <section className="py-16 bg-warm-cream border-t border-b border-coffee-brown/10">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
+          >
             <div className="text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-display text-rich-black mb-3">
                 Nutrition & <span className="italic text-coffee-brown">Allergens</span>
@@ -121,14 +164,20 @@ const Menu = () => {
             >
               See Allergens
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <h2 className="text-4xl md:text-5xl font-display text-rich-black mb-6">
               Ready to<br />
               <span className="italic text-coffee-brown">Order?</span>
@@ -144,7 +193,7 @@ const Menu = () => {
             >
               Order Now
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const Catering = () => {
   const [formData, setFormData] = useState({
@@ -74,7 +75,13 @@ const Catering = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
               Corporate Solutions
             </span>
@@ -85,7 +92,7 @@ const Catering = () => {
             <p className="text-warm-cream/90 text-lg md:text-xl leading-relaxed">
               Fresh, reliable, consistent — designed for offices, co-working spaces, and events.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -93,7 +100,13 @@ const Catering = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
                 Our Advantage
               </span>
@@ -101,11 +114,18 @@ const Catering = () => {
                 Why Companies<br />
                 <span className="italic text-coffee-brown">Choose noa's</span>
               </h2>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
               {reasons.map((reason, index) => (
-                <div key={index} className="flex items-start gap-4">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="flex items-start gap-4"
+                >
                   <svg
                     className="w-6 h-6 text-coffee-brown flex-shrink-0 mt-1"
                     fill="currentColor"
@@ -118,18 +138,24 @@ const Catering = () => {
                     />
                   </svg>
                   <p className="text-rich-black/80 text-lg">{reason}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <div className="relative h-80 overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative h-80 overflow-hidden"
+            >
               <img
                 src="https://static.wixstatic.com/media/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg"
                 alt="Corporate Catering"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -137,7 +163,13 @@ const Catering = () => {
       {/* Catering Options */}
       <section className="py-24 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
               Our Services
             </span>
@@ -145,11 +177,18 @@ const Catering = () => {
               Catering<br />
               <span className="italic text-coffee-brown">Options</span>
             </h2>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {cateringOptions.map((option, index) => (
-              <div key={index} className="bg-white p-8">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-white p-8"
+              >
                 <div className="mb-6">
                   <span className="text-5xl font-display text-coffee-brown/20">
                     0{index + 1}
@@ -164,9 +203,9 @@ const Catering = () => {
                       <span className="text-coffee-brown mt-1">•</span>
                       <span className="text-rich-black/70">{item}</span>
                     </li>
-                  ))}
+                    ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

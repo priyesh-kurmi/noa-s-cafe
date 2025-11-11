@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const Home = () => {
   const galleryImages = [
@@ -55,43 +56,63 @@ const Home = () => {
         ></div>
 
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          <div className="mb-6 inline-block">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-6 inline-block"
+          >
             <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-bold">
               Fresh Food. Specialty Coffee. Made Daily.
             </span>
-          </div>
+          </motion.div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display text-rich-black mb-8 leading-tight font-bold">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-display text-rich-black mb-8 leading-tight font-bold"
+          >
             Roasted In-House.<br />
             <span className="italic text-coffee-brown">Prepared Fresh Every Morning.</span>
-          </h1>
+          </motion.h1>
           
-          <p className="text-lg md:text-xl text-rich-black mb-12 max-w-3xl mx-auto leading-relaxed font-semibold">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl text-rich-black mb-12 max-w-3xl mx-auto leading-relaxed font-semibold"
+          >
             Served across 8+ locations for the modern working day.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
             <a
               href="https://noas.order.direct/order"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 min-w-[200px] font-medium shadow-xl"
+              className="bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl"
             >
               Order Now
             </a>
             <Link
               to="/locations"
-              className="border-2 border-coffee-brown text-coffee-brown bg-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-coffee-brown hover:text-white transition-all duration-300 min-w-[200px] font-medium shadow-xl"
+              className="border-2 border-coffee-brown text-coffee-brown bg-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-coffee-brown hover:text-white transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl"
             >
               Find a noa's Café
             </Link>
             <Link
               to="/catering"
-              className="border-2 border-rich-black text-white bg-rich-black px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-rich-black hover:border-rich-black transition-all duration-300 min-w-[200px] font-medium shadow-xl"
+              className="border-2 border-rich-black text-white bg-rich-black px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-rich-black hover:border-rich-black transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl"
             >
               Corporate Catering
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -131,7 +152,12 @@ const Home = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
                 Premium Specialty Coffee
               </span>
@@ -148,15 +174,21 @@ const Home = () => {
               >
                 Explore Our Coffee →
               </Link>
-            </div>
-            <div className="relative h-[500px] overflow-hidden">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative h-[500px] overflow-hidden"
+            >
               <img
                 src="https://static.wixstatic.com/media/11062b_989b50976b7f4f6c87b8579f5f4e1104~mv2.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Black%20Coffee.jpg"
                 alt="Specialty Coffee"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -165,15 +197,27 @@ const Home = () => {
       <section className="py-24 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 relative h-[500px] overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1 relative h-[500px] overflow-hidden"
+            >
               <img
                 src="https://static.wixstatic.com/media/11062b_0d0f1f9ac51a404b86916cfba22bdb83~mv2.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Morning%20Coffee.jpg"
                 alt="Fresh Food"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-            </div>
-            <div className="order-1 lg:order-2">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="order-1 lg:order-2"
+            >
               <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
                 Made Fresh Daily
               </span>
@@ -184,7 +228,7 @@ const Home = () => {
               <p className="text-rich-black/70 text-lg leading-relaxed">
                 Our menu is intentionally designed for speed, freshness and balance. Wraps, salads, pastries and fruit bowls are prepared daily using smart ingredient systems to reduce waste and deliver consistent quality.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -192,7 +236,13 @@ const Home = () => {
       {/* Section 3 - Corporate Catering */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center mb-16"
+          >
             <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
               Corporate Solutions
             </span>
@@ -209,15 +259,21 @@ const Home = () => {
             >
               View Catering Services →
             </Link>
-          </div>
-          <div className="relative h-96 overflow-hidden">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative h-96 overflow-hidden"
+          >
             <img
               src="https://static.wixstatic.com/media/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg"
               alt="Corporate Catering"
               className="w-full h-full object-cover"
               loading="lazy"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -229,7 +285,13 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
               Our Commitment
             </span>
@@ -240,14 +302,20 @@ const Home = () => {
             <p className="text-warm-cream/90 text-lg leading-relaxed">
               We're committed to clean practices at every level — fully recyclable coffee packaging, fresh food prepared daily, smart menu engineering to minimise waste and ethical sourcing that supports farmers worldwide.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Section 5 - Locations Preview */}
       <section className="py-24 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
               Find Us
             </span>
@@ -264,7 +332,7 @@ const Home = () => {
             >
               View All Locations →
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -276,7 +344,13 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
               Captured Moments
             </span>
@@ -292,7 +366,7 @@ const Home = () => {
               "More than just coffee — it's the daily ritual that fuels productivity, 
               sparks conversation, and creates connection."
             </p>
-          </div>
+          </motion.div>
 
           {/* Gallery Grid */}
           <div className="space-y-6 overflow-hidden">

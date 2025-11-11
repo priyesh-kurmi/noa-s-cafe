@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const OurCoffee = () => {
   const coffeeOrigins = [
@@ -33,7 +34,13 @@ const OurCoffee = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
               Our Coffee
             </span>
@@ -44,7 +51,7 @@ const OurCoffee = () => {
             <p className="text-warm-cream/90 text-lg md:text-xl leading-relaxed">
               We roast our own specialty coffee using carefully selected beans from farms we know, trust and support.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -53,7 +60,12 @@ const OurCoffee = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
                 <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
                   Our Process
                 </span>
@@ -64,15 +76,21 @@ const OurCoffee = () => {
                 <p className="text-rich-black/70 text-lg leading-relaxed">
                   Every batch is slow-roasted in Surrey using methods that highlight origin flavour, aroma and balance. Our roasting team ensures your cup tastes as smooth and consistent in Farringdon as it does in Stockley Park.
                 </p>
-              </div>
-              <div className="relative h-[500px] overflow-hidden">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative h-[500px] overflow-hidden"
+              >
                 <img
                   src="/images/ourcoffee1.jpg"
                   alt="Coffee Roasting"
                   className="w-full h-full object-contain"
                   loading="lazy"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -81,7 +99,13 @@ const OurCoffee = () => {
       {/* Section 2 - Coffee Origins */}
       <section className="py-24 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
               Our Beans
             </span>
@@ -89,12 +113,16 @@ const OurCoffee = () => {
               Our Coffee<br />
               <span className="italic text-coffee-brown">Origins</span>
             </h2>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {coffeeOrigins.map((coffee, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white p-8 hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="mb-6">
@@ -128,7 +156,7 @@ const OurCoffee = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -139,17 +167,29 @@ const OurCoffee = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="order-2 md:order-1">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="order-2 md:order-1"
+              >
                 <img
                   src="/images/ourcoffee2.jpg"
                   alt="Coffee Sourcing"
                   className="w-full h-[500px] object-contain"
                   loading="lazy"
                 />
-              </div>
-              <div className="order-1 md:order-2">
-                <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
-                  Ethical Partnerships
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="order-1 md:order-2"
+              >
+                <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
+                  Ethical Sourcing
                 </span>
                 <h2 className="text-4xl md:text-5xl font-display text-rich-black mb-6">
                   Direct Trade,<br />
@@ -158,7 +198,7 @@ const OurCoffee = () => {
                 <p className="text-rich-black/70 text-lg leading-relaxed">
                   We work directly with growers — not brokers — ensuring farmers receive fair compensation and long-term partnership support. Our sourcing approach uplifts communities and strengthens sustainable agricultural practices.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -167,7 +207,13 @@ const OurCoffee = () => {
       {/* Section 4 - Packaging & Environment */}
       <section className="py-24 bg-coffee-brown text-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
               Sustainability
             </span>
@@ -178,7 +224,7 @@ const OurCoffee = () => {
             <p className="text-warm-cream/90 text-lg leading-relaxed">
               Our coffee bags are made from 100% recyclable paper — one of the most eco-conscious options available in the UK. It's simple, responsible, and aligned with our principles.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
