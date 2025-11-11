@@ -9,6 +9,7 @@ const Footer = () => {
     { name: 'Menu', path: '/menu' },
     { name: 'Catering', path: '/catering' },
     { name: 'Locations', path: '/locations' },
+    { name: 'Jobs', path: '/jobs' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ]
@@ -19,9 +20,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <Link to="/">
-              <h3 className="text-4xl font-logo font-extrabold lowercase text-coffee-brown mb-4">
-                noa's
-              </h3>
+              <img 
+                src="/images/logo.png" 
+                alt="noa's Café" 
+                className="h-10 w-auto mb-4"
+              />
             </Link>
             <p className="text-rich-black/70 leading-relaxed">
               Fresh food. Specialty coffee. Made daily.<br />
@@ -66,7 +69,7 @@ const Footer = () => {
         <div className="border-t border-coffee-brown/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-rich-black/60 text-sm">
-              © {currentYear} NOA'S Café. All rights reserved.
+              © {currentYear} noa's Café. All rights reserved.
             </p>
             <p className="text-rich-black/60 text-sm">
               Crafted with excellence and dedication

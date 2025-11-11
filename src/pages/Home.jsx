@@ -44,7 +44,7 @@ const Home = () => {
               to="/locations"
               className="border-2 border-coffee-brown text-coffee-brown bg-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-coffee-brown hover:text-white transition-all duration-300 min-w-[200px] font-medium shadow-xl"
             >
-              Find a NOA'S Café
+              Find a noa's Café
             </Link>
             <Link
               to="/catering"
@@ -98,7 +98,7 @@ const Home = () => {
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-rich-black mb-6">
                 Specialty Coffee,<br />
-                <span className="italic text-coffee-brown">Roasted by NOA'S</span>
+                <span className="italic text-coffee-brown">Roasted by noa's</span>
               </h2>
               <p className="text-rich-black/70 text-lg leading-relaxed mb-8">
                 Our coffee starts at origin and ends in our Surrey roastery, where we roast in small batches for unmatched consistency and flavour. Ethically sourced from Brazil, Uganda and Colombia, every bean is part of a direct trade relationship that prioritises sustainability, fair pay, and exceptional quality.
@@ -229,7 +229,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section 6 - About NOA'S */}
+      {/* Section 6 - About noa's */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">

@@ -237,7 +237,7 @@ const Contact = () => {
                   Visit Us
                 </h3>
                 <p className="text-rich-black/70 mb-4">
-                  Find your nearest NOA'S Café location.
+                  Find your nearest noa's Café location.
                 </p>
                 <a
                   href="/locations"
@@ -255,7 +255,7 @@ const Contact = () => {
                   Partnerships
                 </h3>
                 <p className="text-rich-black/70 mb-4">
-                  Interested in partnering with NOA'S?
+                  Interested in partnering with noa's?
                 </p>
                 <a
                   href="/about"

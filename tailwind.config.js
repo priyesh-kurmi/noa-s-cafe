@@ -15,7 +15,7 @@ export default {
       fontFamily: {
         'display': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
-        'logo': ['Quicksand', 'sans-serif'],
+        'logo': ['Varela Round', 'sans-serif'],
       },
     },
   },

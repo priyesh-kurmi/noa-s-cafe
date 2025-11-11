@@ -47,7 +47,7 @@ const About = () => {
                   <span className="italic text-coffee-brown">Began</span>
                 </h2>
                 <p className="text-rich-black/70 text-lg leading-relaxed mb-6">
-                  NOA'S began with a simple idea: bring better coffee and fresh, honest food to the spaces where people work, think and connect.
+                  noa's began with a simple idea: bring better coffee and fresh, honest food to the spaces where people work, think and connect.
                 </p>
                 <p className="text-rich-black/70 text-lg leading-relaxed">
                   Today, we roast our own specialty coffee, run multiple cafés across London and the South East, and provide trusted corporate catering solutions for teams of all sizes.
@@ -56,7 +56,7 @@ const About = () => {
               <div className="relative h-[500px] overflow-hidden">
                 <img
                   src="https://static.wixstatic.com/media/1ef8a6c287794628a4eb7dcb299ea8de.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Woman%20Enjoying%20her%20Drink.jpg"
-                  alt="NOA'S Story"
+                  alt="noa's Story"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -134,6 +134,30 @@ const About = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nutrition & Allergens */}
+      <section className="py-16 bg-warm-cream border-t border-b border-coffee-brown/10">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-display text-rich-black mb-3">
+                Nutrition & <span className="italic text-coffee-brown">Allergens</span>
+              </h3>
+              <p className="text-rich-black/70 leading-relaxed max-w-2xl">
+                We take food allergies and intolerances seriously. Full allergen information is available for every item on our menu — just ask a member of our team before ordering.
+              </p>
+            </div>
+            <a
+              href="https://www.noas.uk/_files/ugd/525754_8a780cdcf5dd45d38cf7c6dcf7f4851d.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-coffee-brown text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-opacity-90 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
+            >
+              See Allergens
+            </a>
           </div>
         </div>
       </section>

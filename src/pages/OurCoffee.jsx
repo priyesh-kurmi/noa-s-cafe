@@ -194,7 +194,7 @@ const OurCoffee = () => {
               <span className="italic text-coffee-brown">the Workplace</span>
             </h2>
             <p className="text-rich-black/70 text-lg leading-relaxed mb-8">
-              We created NOA'S coffee to fuel productivity, creativity and focus — rich, smooth, consistent and ethically crafted. It's the taste of quality in every workday moment.
+              We created noa's coffee to fuel productivity, creativity and focus — rich, smooth, consistent and ethically crafted. It's the taste of quality in every workday moment.
             </p>
             <a
               href="https://noas.order.direct/order"

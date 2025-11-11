@@ -134,7 +134,7 @@ const Locations = () => {
               <span className="italic text-soft-gold">Today</span>
             </h2>
             <p className="text-warm-cream/90 text-lg mb-8">
-              Stop by your nearest NOA'S Café or order ahead for collection.
+              Stop by your nearest noa's Café or order ahead for collection.
             </p>
             <a
               href="https://noas.order.direct/order"

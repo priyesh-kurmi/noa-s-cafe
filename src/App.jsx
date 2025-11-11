@@ -7,6 +7,7 @@ import OurCoffee from './pages/OurCoffee'
 import Menu from './pages/Menu'
 import Catering from './pages/Catering'
 import Locations from './pages/Locations'
+import Jobs from './pages/Jobs'
 import About from './pages/About'
 import Contact from './pages/Contact'
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/catering" element={<Catering />} />
             <Route path="/locations" element={<Locations />} />
+            <Route path="/jobs" element={<Jobs />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

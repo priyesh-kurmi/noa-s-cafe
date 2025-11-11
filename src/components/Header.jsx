@@ -39,6 +39,7 @@ const Header = () => {
     { name: 'Menu', path: '/menu' },
     { name: 'Catering', path: '/catering' },
     { name: 'Locations', path: '/locations' },
+    { name: 'Jobs', path: '/jobs' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ]
@@ -52,9 +53,11 @@ const Header = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <h1 className="text-3xl lg:text-[2.75rem] font-logo font-extrabold lowercase text-coffee-brown tracking-wide select-none">
-              noa's
-            </h1>
+            <img 
+              src="/images/logo.png" 
+              alt="Noa's Café" 
+              className="h-8 lg:h-9 w-auto"
+            />
           </Link>
           
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
