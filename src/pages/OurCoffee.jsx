@@ -82,7 +82,7 @@ const OurCoffee = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative h-[500px] overflow-hidden"
+                className="relative h-[350px] md:h-[450px] lg:h-[500px] overflow-hidden"
               >
                 <img
                   src="/images/ourcoffee1.jpg"
@@ -177,7 +177,7 @@ const OurCoffee = () => {
                 <img
                   src="/images/ourcoffee2.jpg"
                   alt="Coffee Sourcing"
-                  className="w-full h-[500px] object-contain"
+                  className="w-full h-[350px] md:h-[450px] lg:h-[500px] object-contain"
                   loading="lazy"
                 />
               </motion.div>

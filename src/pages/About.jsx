@@ -54,7 +54,7 @@ const About = () => {
                   Today, we roast our own specialty coffee, run multiple cafés across London and the South East, and provide trusted corporate catering solutions for teams of all sizes.
                 </p>
               </div>
-              <div className="relative h-[500px] overflow-hidden">
+              <div className="relative h-[350px] md:h-[450px] lg:h-[500px] overflow-hidden">
                 <img
                   src="https://static.wixstatic.com/media/1ef8a6c287794628a4eb7dcb299ea8de.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Woman%20Enjoying%20her%20Drink.jpg"
                   alt="noa's Story"
@@ -118,7 +118,7 @@ const About = () => {
                 <img
                   src="https://static.wixstatic.com/media/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg"
                   alt="Our Approach"
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[300px] md:h-[350px] lg:h-[400px] object-cover"
                   loading="lazy"
                 />
               </div>

@@ -90,25 +90,25 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-50"
           >
             <a
               href="https://noas.order.direct/order"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl"
+              className="bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl relative z-50"
             >
               Order Now
             </a>
             <Link
               to="/locations"
-              className="border-2 border-coffee-brown text-coffee-brown bg-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-coffee-brown hover:text-white transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl"
+              className="border-2 border-coffee-brown text-coffee-brown bg-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-coffee-brown hover:text-white transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl relative z-50"
             >
               Find a noa's Café
             </Link>
             <Link
               to="/catering"
-              className="border-2 border-rich-black text-white bg-rich-black px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-rich-black hover:border-rich-black transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl"
+              className="border-2 border-rich-black text-white bg-rich-black px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-rich-black hover:border-rich-black transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl relative z-50"
             >
               Corporate Catering
             </Link>
@@ -135,7 +135,7 @@ const Home = () => {
       {/* Coffee Image - Mobile Only */}
       <div className="relative lg:hidden">
         <div 
-          className="absolute right-0 z-20 w-3/4 md:w-3/5 animate-slide-in-right"
+          className="absolute right-0 z-10 w-3/4 md:w-3/5 animate-slide-in-right pointer-events-none"
           style={{
             top: '50%',
           }}
@@ -180,7 +180,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] overflow-hidden"
+              className="relative h-[400px] md:h-[500px] overflow-hidden"
             >
               <img
                 src="https://static.wixstatic.com/media/11062b_989b50976b7f4f6c87b8579f5f4e1104~mv2.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Black%20Coffee.jpg"
@@ -202,7 +202,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="order-2 lg:order-1 relative h-[500px] overflow-hidden"
+              className="order-2 lg:order-1 relative h-[400px] md:h-[500px] overflow-hidden"
             >
               <img
                 src="https://static.wixstatic.com/media/11062b_0d0f1f9ac51a404b86916cfba22bdb83~mv2.jpg/v1/fill/w_1334,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Morning%20Coffee.jpg"
@@ -265,7 +265,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-96 overflow-hidden"
+            className="relative h-64 md:h-80 lg:h-96 overflow-hidden"
           >
             <img
               src="https://static.wixstatic.com/media/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg"
@@ -376,7 +376,7 @@ const Home = () => {
                 {[...row1, ...row1].map((img, index) => (
                   <div 
                     key={`row1-${index}`} 
-                    className="relative w-64 h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
+                    className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
                   >
                     <img
                       src={`/images/gallary/${img}`}
@@ -396,7 +396,7 @@ const Home = () => {
                 {[...row2, ...row2].map((img, index) => (
                   <div 
                     key={`row2-${index}`} 
-                    className="relative w-64 h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
+                    className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
                   >
                     <img
                       src={`/images/gallary/${img}`}
@@ -416,7 +416,7 @@ const Home = () => {
                 {[...row3, ...row3].map((img, index) => (
                   <div 
                     key={`row3-${index}`} 
-                    className="relative w-64 h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
+                    className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 overflow-hidden group cursor-pointer bg-coffee-brown/20"
                   >
                     <img
                       src={`/images/gallary/${img}`}
