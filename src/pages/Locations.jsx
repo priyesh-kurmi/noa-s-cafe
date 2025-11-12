@@ -101,31 +101,6 @@ const Locations = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-24 bg-warm-cream">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-6xl mx-auto text-center">
-            <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-medium mb-6 inline-block">
-              Coverage Area
-            </span>
-            <h2 className="text-4xl md:text-5xl font-display text-rich-black mb-8">
-              Serving London &<br />
-              <span className="italic text-coffee-brown">the South East</span>
-            </h2>
-            <p className="text-rich-black/70 text-lg mb-12 max-w-3xl mx-auto">
-              From the heart of Central London to major business parks across Berkshire and Buckinghamshire, we're strategically positioned to serve busy professionals wherever they work.
-            </p>
-            <div className="bg-white p-8 shadow-sm">
-              <div className="aspect-video bg-coffee-brown/5 flex items-center justify-center">
-                <p className="text-rich-black/40 text-sm uppercase tracking-wider">
-                  Interactive map coming soon
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-coffee-brown text-white">
         <div className="container mx-auto px-6 lg:px-12">

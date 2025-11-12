@@ -133,18 +133,18 @@ const Home = () => {
       </section>
 
       {/* Coffee Image - Mobile Only */}
-      <div className="relative lg:hidden overflow-hidden">
+      <div className="relative lg:hidden h-0">
         <div 
-          className="absolute right-0 z-10 w-3/4 md:w-3/5 animate-slide-in-right pointer-events-none"
+          className="absolute right-0 z-10 w-3/4 md:w-3/5 pointer-events-none"
           style={{
-            top: '50%',
-            maxWidth: '75%',
+            top: '0',
+            transform: 'translateX(30%) translateY(-50%)',
           }}
         >
           <img 
             src="/images/coffee.png" 
             alt="Coffee" 
-            className="w-full h-auto max-w-full"
+            className="w-full h-auto"
           />
         </div>
       </div>
