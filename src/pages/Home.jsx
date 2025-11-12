@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-visible bg-rich-black">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-rich-black">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -133,17 +133,18 @@ const Home = () => {
       </section>
 
       {/* Coffee Image - Mobile Only */}
-      <div className="relative lg:hidden">
+      <div className="relative lg:hidden overflow-hidden">
         <div 
           className="absolute right-0 z-10 w-3/4 md:w-3/5 animate-slide-in-right pointer-events-none"
           style={{
             top: '50%',
+            maxWidth: '75%',
           }}
         >
           <img 
             src="/images/coffee.png" 
             alt="Coffee" 
-            className="w-full h-auto"
+            className="w-full h-auto max-w-full"
           />
         </div>
       </div>

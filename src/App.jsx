@@ -14,9 +14,9 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden max-w-[100vw]">
         <Header />
-        <main>
+        <main className="overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/our-coffee" element={<OurCoffee />} />
