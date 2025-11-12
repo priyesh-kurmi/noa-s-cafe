@@ -1,51 +1,65 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const Home = () => {
+  const galleryRef = useRef(null)
+  const [isGalleryVisible, setIsGalleryVisible] = useState(false)
+
+  // Optimized gallery - reduced from 31 to 18 best images
   const galleryImages = [
     'IMG-20251111-WA0002.jpg',
-    'IMG-20251111-WA0003.jpg',
     'IMG-20251111-WA0004.jpg',
-    'IMG-20251111-WA0005.jpg',
     'IMG-20251111-WA0006.jpg',
-    'IMG-20251111-WA0007.jpg',
     'IMG-20251111-WA0008.jpg',
-    'IMG-20251111-WA0009.jpg',
     'IMG-20251111-WA0010.jpg',
-    'IMG-20251111-WA0011.jpg',
     'IMG-20251111-WA0012.jpg',
-    'IMG-20251111-WA0013.jpg',
     'IMG-20251111-WA0014.jpg',
-    'IMG-20251111-WA0015.jpg',
     'IMG-20251111-WA0016.jpg',
-    'IMG-20251111-WA0017.jpg',
     'IMG-20251111-WA0018.jpg',
-    'IMG-20251111-WA0019.jpg',
     'IMG-20251111-WA0020.jpg',
-    'IMG-20251111-WA0021.jpg',
     'IMG-20251111-WA0022.jpg',
-    'IMG-20251111-WA0023.jpg',
     'IMG-20251111-WA0024.jpg',
-    'IMG-20251111-WA0025.jpg',
     'IMG-20251111-WA0026.jpg',
-    'IMG-20251111-WA0027.jpg',
     'IMG-20251111-WA0028.jpg',
-    'IMG-20251111-WA0029.jpg',
     'IMG-20251111-WA0030.jpg',
     'IMG-20251111-WA0032.jpg',
-    'IMG-20251111-WA0033.jpg',
+    'IMG-20251111-WA0015.jpg',
+    'IMG-20251111-WA0023.jpg',
   ]
 
   // Split images into 3 rows
-  const row1 = galleryImages.slice(0, 11)
-  const row2 = galleryImages.slice(11, 21)
-  const row3 = galleryImages.slice(21, 31)
+  const row1 = galleryImages.slice(0, 6)
+  const row2 = galleryImages.slice(6, 12)
+  const row3 = galleryImages.slice(12, 18)
+
+  // Intersection Observer to pause animations when gallery is off-screen
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsGalleryVisible(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current)
+    }
+
+    return () => {
+      if (galleryRef.current) {
+        observer.unobserve(galleryRef.current)
+      }
+    }
+  }, [])
 
   return (
     <div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-rich-black">
+        {/* Gradient placeholder for instant load */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-coffee-brown/30 via-rich-black to-rich-black"></div>
+        
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -188,6 +202,7 @@ const Home = () => {
                 alt="Specialty Coffee"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -210,6 +225,7 @@ const Home = () => {
                 alt="Fresh Food"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                decoding="async"
               />
             </motion.div>
             <motion.div
@@ -273,6 +289,7 @@ const Home = () => {
               alt="Corporate Catering"
               className="w-full h-full object-cover"
               loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>
@@ -338,7 +355,7 @@ const Home = () => {
       </section>
 
       {/* Gallery Section - Customer Experience */}
-      <section className="py-24 bg-rich-black text-white relative overflow-hidden">
+      <section ref={galleryRef} className="py-24 bg-rich-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-soft-gold rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-coffee-brown rounded-full blur-3xl"></div>
@@ -369,11 +386,11 @@ const Home = () => {
             </p>
           </motion.div>
 
-          {/* Gallery Grid */}
+          {/* Gallery Grid - Optimized with conditional animation */}
           <div className="space-y-6 overflow-hidden">
             {/* Row 1 */}
             <div className="flex gap-4">
-              <div className="flex gap-4 animate-scroll-left">
+              <div className={`flex gap-4 ${isGalleryVisible ? 'animate-scroll-left' : ''}`}>
                 {[...row1, ...row1].map((img, index) => (
                   <div 
                     key={`row1-${index}`} 
@@ -384,6 +401,7 @@ const Home = () => {
                       alt={`noa's Café Experience`}
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -393,7 +411,7 @@ const Home = () => {
 
             {/* Row 2 */}
             <div className="flex gap-4">
-              <div className="flex gap-4 animate-scroll-right-slow">
+              <div className={`flex gap-4 ${isGalleryVisible ? 'animate-scroll-right-slow' : ''}`}>
                 {[...row2, ...row2].map((img, index) => (
                   <div 
                     key={`row2-${index}`} 
@@ -404,6 +422,7 @@ const Home = () => {
                       alt={`noa's Café Experience`}
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -413,7 +432,7 @@ const Home = () => {
 
             {/* Row 3 */}
             <div className="flex gap-4">
-              <div className="flex gap-4 animate-scroll-left-slower">
+              <div className={`flex gap-4 ${isGalleryVisible ? 'animate-scroll-left-slower' : ''}`}>
                 {[...row3, ...row3].map((img, index) => (
                   <div 
                     key={`row3-${index}`} 
@@ -424,6 +443,7 @@ const Home = () => {
                       alt={`noa's Café Experience`}
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -459,6 +479,7 @@ const Home = () => {
                   alt="NOA'S Experience"
                   className="w-full h-[500px] object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div>
