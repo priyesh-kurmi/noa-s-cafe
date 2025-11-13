@@ -27,7 +27,7 @@ const Allergens = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-12 bg-warm-cream">
+      <section className="py-8 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}

@@ -56,7 +56,7 @@ const OurCoffee = () => {
       </section>
 
       {/* Section 1 - Roasting Philosophy */}
-      <section className="py-12 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -163,7 +163,7 @@ const OurCoffee = () => {
       </section>
 
       {/* Section 3 - Responsible Sourcing */}
-      <section className="py-24 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -205,7 +205,7 @@ const OurCoffee = () => {
       </section>
 
       {/* Section 4 - Packaging & Environment */}
-      <section className="py-24 bg-coffee-brown text-white">
+      <section className="py-8 bg-coffee-brown text-white">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

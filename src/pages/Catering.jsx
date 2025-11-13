@@ -137,7 +137,7 @@ const Catering = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-12 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -223,7 +223,7 @@ const Catering = () => {
       </section>
 
       {/* Catering Options */}
-      <section className="py-12 bg-warm-cream">
+      <section className="py-8 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -274,7 +274,7 @@ const Catering = () => {
       </section>
 
       {/* Quote Form */}
-      <section className="py-12 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">

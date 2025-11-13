@@ -67,7 +67,7 @@ const Locations = () => {
       </section>
 
       {/* Locations Grid */}
-      <section className="py-12 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -95,7 +95,7 @@ const Locations = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-coffee-brown text-white">
+      <section className="py-8 bg-coffee-brown text-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-display mb-6">
