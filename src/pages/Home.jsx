@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-24 flex items-center justify-center bg-rich-black overflow-hidden">
+      <section className="relative pt-24 pb-6 flex items-center justify-center bg-rich-black overflow-hidden">
         {/* Hero Background Image */}
         <div 
           className="absolute inset-0 z-0"
