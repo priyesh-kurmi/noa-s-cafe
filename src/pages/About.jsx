@@ -139,30 +139,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Nutrition & Allergens */}
-      <section className="py-16 bg-warm-cream border-t border-b border-coffee-brown/10">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-display text-rich-black mb-3">
-                Nutrition & <span className="italic text-coffee-brown">Allergens</span>
-              </h3>
-              <p className="text-rich-black/70 leading-relaxed max-w-2xl">
-                We take food allergies and intolerances seriously. Full allergen information is available for every item on our menu — just ask a member of our team before ordering.
-              </p>
-            </div>
-            <a
-              href="https://www.noas.uk/_files/ugd/525754_8a780cdcf5dd45d38cf7c6dcf7f4851d.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-coffee-brown text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-opacity-90 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
-            >
-              See Allergens
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Section 4 - Our Mission */}
       <section className="py-24 bg-coffee-brown text-white">
         <div className="container mx-auto px-6 lg:px-12">

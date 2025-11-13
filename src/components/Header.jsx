@@ -38,6 +38,7 @@ const Header = () => {
     { name: 'Our Coffee', path: '/our-coffee' },
     { name: 'Menu', path: '/menu' },
     { name: 'Catering', path: '/catering' },
+    { name: 'Allergens', path: '/allergens' },
     { name: 'Locations', path: '/locations' },
     { name: 'Jobs', path: '/jobs' },
     { name: 'About Us', path: '/about' },

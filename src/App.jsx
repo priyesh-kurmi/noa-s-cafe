@@ -11,6 +11,7 @@ import Jobs from './pages/Jobs'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import Allergens from './pages/Allergens'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/allergens" element={<Allergens />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>

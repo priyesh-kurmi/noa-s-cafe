@@ -147,13 +147,35 @@ const Catering = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-64 md:h-72 lg:h-80 overflow-hidden"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4"
             >
               <img
-                src="https://static.wixstatic.com/media/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_95f01f725e214f99b28844dc1dc1164d~mv2.jpg"
-                alt="Corporate Catering"
-                className="w-full h-full object-cover"
+                src="/images/corporatehome.jpg"
+                alt="Corporate Catering 1"
+                className="w-full h-48 md:h-56 object-cover"
                 loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="/images/corporatehome2.jpg"
+                alt="Corporate Catering 2"
+                className="w-full h-48 md:h-56 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="/images/corporatehome3.jpg"
+                alt="Corporate Catering 3"
+                className="w-full h-48 md:h-56 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src="/images/corporatehome4.jpg"
+                alt="Corporate Catering 4"
+                className="w-full h-48 md:h-56 object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -207,30 +229,6 @@ const Catering = () => {
                 </ul>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Nutrition & Allergens */}
-      <section className="py-16 bg-warm-cream border-t border-b border-coffee-brown/10">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-display text-rich-black mb-3">
-                Nutrition & <span className="italic text-coffee-brown">Allergens</span>
-              </h3>
-              <p className="text-rich-black/70 leading-relaxed max-w-2xl">
-                We take food allergies and intolerances seriously. Full allergen information is available for every item on our menu — just ask a member of our team before ordering.
-              </p>
-            </div>
-            <a
-              href="https://www.noas.uk/_files/ugd/525754_8a780cdcf5dd45d38cf7c6dcf7f4851d.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-coffee-brown text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-opacity-90 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
-            >
-              See Allergens
-            </a>
           </div>
         </div>
       </section>
