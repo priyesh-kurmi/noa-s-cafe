@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 const Catering = () => {
   const [formData, setFormData] = useState({
@@ -13,11 +14,50 @@ const Catering = () => {
     message: '',
   })
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    alert('Thank you for your enquiry! We will get back to you shortly.')
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      // Replace these with your actual EmailJS credentials
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID',        // Replace with your Service ID
+        'YOUR_CATERING_TEMPLATE_ID',  // Replace with your Catering Template ID
+        {
+          from_name: formData.name,
+          user_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          event_type: formData.eventType,
+          guest_count: formData.guestCount,
+          event_date: formData.eventDate,
+          message: formData.message,
+        },
+        'YOUR_PUBLIC_KEY'         // Replace with your Public Key
+      )
+
+      console.log('Email sent successfully:', result.text)
+      setSubmitStatus('success')
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        eventType: '',
+        guestCount: '',
+        eventDate: '',
+        message: '',
+      })
+    } catch (error) {
+      console.error('Email send failed:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -379,11 +419,28 @@ const Catering = () => {
                 ></textarea>
               </div>
 
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 border border-green-500 text-green-700 px-4 py-3 rounded">
+                  <p className="font-semibold">Thank you for your inquiry!</p>
+                  <p className="text-sm">We'll get back to you shortly at the email provided.</p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border border-red-500 text-red-700 px-4 py-3 rounded">
+                  <p className="font-semibold">Oops! Something went wrong.</p>
+                  <p className="text-sm">Please try again or contact us directly at catering@noas.uk</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300"
+                disabled={isSubmitting}
+                className="w-full bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
-                Submit Request
+                {isSubmitting ? 'Submitting...' : 'Submit Request'}
               </button>
             </form>
           </div>

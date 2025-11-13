@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,18 +11,45 @@ const Contact = () => {
     message: '',
   })
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // null, 'success', 'error'
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you shortly.')
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      enquiryType: '',
-      message: '',
-    })
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+    
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        'YOUR_SERVICE_ID',
+        'YOUR_CONTACT_TEMPLATE_ID',
+        {
+          from_name: formData.name,
+          user_email: formData.email,
+          phone: formData.phone,
+          enquiry_type: formData.enquiryType,
+          message: formData.message,
+          to_email: 'operations@noas.uk'
+        },
+        'YOUR_PUBLIC_KEY'
+      )
+      
+      // Clear form on success
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        enquiryType: '',
+        message: '',
+      })
+      setSubmitStatus('success')
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -194,11 +222,28 @@ const Contact = () => {
                     ></textarea>
                   </div>
 
+                  {/* Success Message */}
+                  {submitStatus === 'success' && (
+                    <div className="bg-green-50 border border-green-500 text-green-700 px-4 py-3 rounded">
+                      <p className="font-semibold">Message sent successfully!</p>
+                      <p className="text-sm">We'll get back to you as soon as possible.</p>
+                    </div>
+                  )}
+
+                  {/* Error Message */}
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-50 border border-red-500 text-red-700 px-4 py-3 rounded">
+                      <p className="font-semibold">Oops! Something went wrong.</p>
+                      <p className="text-sm">Please try again or contact us directly at operations@noas.uk</p>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </div>

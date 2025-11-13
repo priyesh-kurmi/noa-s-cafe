@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 flex items-center justify-center bg-rich-black overflow-hidden">
+      <section className="relative py-24 flex items-center justify-center bg-rich-black overflow-hidden">
         {/* Hero Background Image */}
         <div 
           className="absolute inset-0 z-0"
@@ -77,7 +77,7 @@ const Home = () => {
             className="mb-6 inline-block"
           >
             <span className="text-white text-lg md:text-xl uppercase tracking-[0.3em] font-bold drop-shadow-lg">
-              Fresh Food. Specialty Coffee. Made Daily.
+              Fresh Food. Specialty Coffee. Friendly Faces.
             </span>
           </motion.div>
           
@@ -121,7 +121,7 @@ const Home = () => {
       </section>
 
       {/* Section 1 - Our Coffee */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -167,7 +167,7 @@ const Home = () => {
       </section>
 
       {/* Section 2 - Fresh Food Made Daily */}
-      <section className="py-24 bg-warm-cream">
+      <section className="py-12 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -208,7 +208,7 @@ const Home = () => {
       </section>
 
       {/* Section 3 - Corporate Catering */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -253,7 +253,7 @@ const Home = () => {
       </section>
 
       {/* Section 5 - Locations Preview */}
-      <section className="py-24 bg-warm-cream">
+      <section className="py-12 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -283,7 +283,7 @@ const Home = () => {
       </section>
 
       {/* Gallery Section - Customer Experience */}
-      <section ref={galleryRef} className="py-24 bg-rich-black text-white relative overflow-hidden">
+      <section ref={galleryRef} className="py-12 bg-rich-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-soft-gold rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-coffee-brown rounded-full blur-3xl"></div>
@@ -397,7 +397,7 @@ const Home = () => {
       </section>
 
       {/* Section 6 - About noa's */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
