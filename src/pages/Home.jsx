@@ -56,7 +56,19 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 flex items-center justify-center bg-rich-black">
+      <section className="relative py-32 flex items-center justify-center bg-rich-black overflow-hidden">
+        {/* Hero Background Image */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(/images/ourcoffee2.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-rich-black/40"></div>
+        </div>
+
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -64,7 +76,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="mb-6 inline-block"
           >
-            <span className="text-coffee-brown text-sm uppercase tracking-[0.3em] font-bold">
+            <span className="text-white text-lg md:text-xl uppercase tracking-[0.3em] font-bold drop-shadow-lg">
               Fresh Food. Specialty Coffee. Made Daily.
             </span>
           </motion.div>
@@ -73,7 +85,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed font-semibold"
+            className="text-2xl md:text-3xl lg:text-4xl text-white mb-12 max-w-3xl mx-auto leading-relaxed font-semibold drop-shadow-lg"
           >
             Served across 8+ locations for the modern working day.
           </motion.p>
