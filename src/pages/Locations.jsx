@@ -5,42 +5,38 @@ const Locations = () => {
   const locations = [
     {
       name: 'Liverpool Street',
-      type: 'Corporate Hub',
       address: 'Central London',
     },
     {
       name: 'Farringdon',
-      type: 'Co-Working Space',
       address: 'Central London',
     },
     {
       name: 'Stockley Park',
-      type: 'Business Park',
       address: 'West London',
     },
     {
       name: 'Bracknell',
-      type: 'Corporate Campus',
       address: 'Berkshire',
     },
     {
       name: 'Theale',
-      type: 'Business District',
       address: 'Berkshire',
     },
     {
       name: 'Slough Bath Road',
-      type: 'Corporate Zone',
       address: 'Berkshire',
     },
     {
       name: 'Gerrards Cross',
-      type: 'Business Centre',
+      address: 'Buckinghamshire',
+    },
+    {
+      name: 'Marlow',
       address: 'Buckinghamshire',
     },
     {
       name: 'Waterside',
-      type: 'Corporate Campus',
       address: 'Berkshire',
     },
   ]
@@ -85,12 +81,9 @@ const Locations = () => {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-display text-rich-black mb-2 group-hover:text-coffee-brown transition-colors">
+                  <h3 className="text-2xl font-display text-rich-black mb-3 group-hover:text-coffee-brown transition-colors">
                     {location.name}
                   </h3>
-                  <p className="text-sm uppercase tracking-wider text-rich-black/60 mb-1">
-                    {location.type}
-                  </p>
                   <p className="text-rich-black/70">
                     {location.address}
                   </p>

@@ -87,7 +87,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-2xl md:text-3xl lg:text-4xl text-white mb-12 max-w-3xl mx-auto leading-relaxed font-semibold drop-shadow-lg"
           >
-            Served across 8+ locations for the modern working day.
+            Served across 9+ locations for the modern working day.
           </motion.p>
 
           <motion.div
