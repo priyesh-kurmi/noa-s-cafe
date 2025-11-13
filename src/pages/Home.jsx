@@ -77,7 +77,7 @@ const Home = () => {
             className="mb-6 inline-block"
           >
             <span className="text-white text-lg md:text-xl uppercase tracking-[0.3em] font-bold drop-shadow-lg">
-              Fresh Food. Specialty Coffee. Friendly Faces.
+              Fresh Food. Speciality Coffee. Friendly Faces.
             </span>
           </motion.div>
           
@@ -131,10 +131,10 @@ const Home = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="text-soft-gold text-sm uppercase tracking-[0.3em] font-medium mb-4 inline-block">
-                Premium Specialty Coffee
+                Premium Speciality Coffee
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-rich-black mb-6">
-                Specialty Coffee,<br />
+                Speciality Coffee,<br />
                 <span className="italic text-coffee-brown">Roasted by noa's</span>
               </h2>
               <p className="text-rich-black/70 text-lg leading-relaxed mb-8">
@@ -225,7 +225,7 @@ const Home = () => {
                 <span className="italic text-coffee-brown">Corporate</span>
               </h2>
               <p className="text-rich-black/70 text-lg leading-relaxed mb-8">
-                From fresh sandwiches to premium specialty coffee, we support teams, offices and events with reliable, professionally presented catering. Whether it's a board meeting or a full office lunch, we deliver consistency, quality and speed.
+                From fresh sandwiches to premium speciality coffee, we support teams, offices and events with reliable, professionally presented catering. Whether it's a board meeting or a full office lunch, we deliver consistency, quality and speed.
               </p>
               <Link
                 to="/catering"
@@ -388,7 +388,7 @@ const Home = () => {
             <div className="flex flex-wrap gap-4 justify-center items-center">
               <span className="text-soft-gold text-sm uppercase tracking-wider">#noascafe</span>
               <span className="text-warm-cream/40">•</span>
-              <span className="text-soft-gold text-sm uppercase tracking-wider">#specialtycoffee</span>
+              <span className="text-soft-gold text-sm uppercase tracking-wider">#specialitycoffee</span>
               <span className="text-warm-cream/40">•</span>
               <span className="text-soft-gold text-sm uppercase tracking-wider">#coffeecommunity</span>
             </div>
