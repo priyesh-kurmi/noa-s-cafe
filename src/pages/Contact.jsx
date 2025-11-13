@@ -85,7 +85,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -253,7 +253,7 @@ const Contact = () => {
       </section>
 
       {/* Additional Info */}
-      <section className="py-24 bg-warm-cream">
+      <section className="py-12 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">

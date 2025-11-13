@@ -31,8 +31,8 @@ const PrivacyPolicy = () => {
         </div>
       </section>
 
-      {/* Content */}
-      <section className="py-24 bg-white">
+      {/* Main Content */}
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto prose prose-lg">
             

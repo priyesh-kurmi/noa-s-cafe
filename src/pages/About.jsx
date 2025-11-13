@@ -35,7 +35,7 @@ const About = () => {
       </section>
 
       {/* Section 1 - Our Story */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -68,7 +68,7 @@ const About = () => {
       </section>
 
       {/* Section 2 - Our Values */}
-      <section className="py-24 bg-warm-cream">
+      <section className="py-12 bg-warm-cream">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
@@ -110,7 +110,7 @@ const About = () => {
       </section>
 
       {/* Section 3 - Our Approach */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
