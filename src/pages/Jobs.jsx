@@ -28,18 +28,26 @@ const Jobs = () => {
     
     try {
       // Send email using EmailJS
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_JOBS_TEMPLATE_ID',
+      console.log('Attempting to send email with data:', {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        user_email: formData.email,
+        phone: formData.phone,
+        location: formData.location,
+      })
+      
+      const result = await emailjs.send(
+        'service_qnv4xb2',
+        'template_diit26o',
         {
           from_name: `${formData.firstName} ${formData.lastName}`,
           user_email: formData.email,
           phone: formData.phone,
-          location: formData.location,
-          to_email: 'operations@noas.uk'
+          location: `[JOB APPLICATION] ${formData.location}`,
         },
-        'YOUR_PUBLIC_KEY'
+        'Gn3B67ifhZvRHtfkb'
       )
+      
+      console.log('Email sent successfully:', result)
       
       // Clear form on success
       setFormData({
@@ -52,6 +60,7 @@ const Jobs = () => {
       setSubmitStatus('success')
     } catch (error) {
       console.error('Error sending email:', error)
+      console.error('Error details:', error.text || error.message)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

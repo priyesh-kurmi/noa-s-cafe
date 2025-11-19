@@ -33,7 +33,7 @@ Your website now has 3 functional contact forms that will send emails using Emai
 
 ## Step 3: Create Email Templates
 
-You need to create **3 separate templates** for the 3 forms.
+You need to create **2 templates** for the 3 forms (Jobs and Contact forms share the same template since both go to operations@noas.uk).
 
 ### Template 1: Catering Inquiries
 
@@ -83,72 +83,31 @@ noa's Café Website
 
 ---
 
-### Template 2: Job Applications
+### Template 2: Job Applications & General Contact (Shared Template)
 
 1. Click **"Create New Template"** again
-2. **Template Name:** `Job Application`
+2. **Template Name:** `Job Application & Contact` (you can name it anything - this is just for your reference)
 3. **Template Configuration:**
 
 **Subject:**
 ```
-New Job Application from {{from_name}}
+New Submission from {{from_name}}
 ```
 
 **Content (Body):**
 ```
-New Job Application Received
-
-APPLICANT DETAILS:
-Name: {{from_name}}
-Email: {{user_email}}
-Phone: {{phone}}
-Preferred Location: {{location}}
-
----
-This application was submitted via the noa's Café Jobs page.
-Please contact the applicant to discuss opportunities.
-```
-
-**To Email:**
-```
-operations@noas.uk
-```
-
-**From Name:**
-```
-noa's Café Website
-```
-
-4. Click **"Save"**
-5. **Copy the Template ID**
-
----
-
-### Template 3: General Contact
-
-1. Click **"Create New Template"** again
-2. **Template Name:** `General Contact`
-3. **Template Configuration:**
-
-**Subject:**
-```
-New Contact Form Message from {{from_name}}
-```
-
-**Content (Body):**
-```
-New Contact Form Submission
+New Form Submission
 
 FROM: {{from_name}}
 EMAIL: {{user_email}}
 PHONE: {{phone}}
-ENQUIRY TYPE: {{enquiry_type}}
 
-MESSAGE:
-{{message}}
+DETAILS:
+{{location}}
 
 ---
-This message was submitted via the noa's Café Contact form.
+This submission was received via the noa's Café website.
+The [JOB APPLICATION] or [CONTACT FORM] prefix will help you identify the type.
 ```
 
 **To Email:**
@@ -162,7 +121,9 @@ noa's Café Website
 ```
 
 4. Click **"Save"**
-5. **Copy the Template ID**
+5. **Copy the Template ID** (this will be used for both Jobs and Contact forms)
+
+**Note:** This template is shared between Jobs and Contact forms. The forms add prefixes `[JOB APPLICATION]` or `[CONTACT FORM]` to the location field so you can easily distinguish between them.
 
 ---
 
@@ -177,76 +138,15 @@ noa's Café Website
 
 ## Step 5: Update Your Website Code
 
-Now you have all 4 credentials:
-- ✅ Service ID (e.g., `service_abc123`)
-- ✅ Catering Template ID (e.g., `template_catering123`)
-- ✅ Jobs Template ID (e.g., `template_jobs456`)
-- ✅ Contact Template ID (e.g., `template_contact789`)
-- ✅ Public Key (e.g., `ABcd123EFgh456`)
+**Good news!** Your code is already updated with the actual credentials:
+- ✅ Service ID: `service_qnv4xb2`
+- ✅ Catering Template ID: `template_wc6bi9s`
+- ✅ Jobs/Contact Template ID: `template_diit26o` (shared template)
+- ✅ Public Key: `Gn3B67ifhZvRHtfkb`
 
-### Update Catering.jsx
-
-1. Open `src/pages/Catering.jsx` in VS Code
-2. Find line ~32 with `'YOUR_SERVICE_ID'`
-3. Replace the placeholders:
-   ```javascript
-   await emailjs.send(
-     'service_abc123',  // ← Replace YOUR_SERVICE_ID with your actual Service ID
-     'template_catering123',  // ← Replace YOUR_CATERING_TEMPLATE_ID with your Catering Template ID
-     {
-       from_name: formData.name,
-       user_email: formData.email,
-       phone: formData.phone,
-       company: formData.company,
-       event_type: formData.eventType,
-       guest_count: formData.guestCount,
-       event_date: formData.eventDate,
-       message: formData.message,
-     },
-     'ABcd123EFgh456'  // ← Replace YOUR_PUBLIC_KEY with your actual Public Key
-   )
-   ```
-
-### Update Jobs.jsx
-
-1. Open `src/pages/Jobs.jsx` in VS Code
-2. Find line ~25 with `'YOUR_SERVICE_ID'`
-3. Replace the placeholders:
-   ```javascript
-   await emailjs.send(
-     'service_abc123',  // ← Same Service ID
-     'template_jobs456',  // ← Replace YOUR_JOBS_TEMPLATE_ID with your Jobs Template ID
-     {
-       from_name: `${formData.firstName} ${formData.lastName}`,
-       user_email: formData.email,
-       phone: formData.phone,
-       location: formData.location,
-       to_email: 'operations@noas.uk'
-     },
-     'ABcd123EFgh456'  // ← Same Public Key
-   )
-   ```
-
-### Update Contact.jsx
-
-1. Open `src/pages/Contact.jsx` in VS Code
-2. Find line ~24 with `'YOUR_SERVICE_ID'`
-3. Replace the placeholders:
-   ```javascript
-   await emailjs.send(
-     'service_abc123',  // ← Same Service ID
-     'template_contact789',  // ← Replace YOUR_CONTACT_TEMPLATE_ID with your Contact Template ID
-     {
-       from_name: formData.name,
-       user_email: formData.email,
-       phone: formData.phone,
-       enquiry_type: formData.enquiryType,
-       message: formData.message,
-       to_email: 'operations@noas.uk'
-     },
-     'ABcd123EFgh456'  // ← Same Public Key
-   )
-   ```
+All three forms are fully functional and ready to go. Just update the "To Email" in your EmailJS templates to:
+- Catering template → `catering@noas.uk`
+- Jobs/Contact template → `operations@noas.uk`
 
 ---
 
@@ -300,15 +200,11 @@ Now you have all 4 credentials:
 
 - [ ] Created EmailJS account
 - [ ] Added email service (Gmail/Outlook/etc.)
-- [ ] Created 3 templates (Catering, Jobs, Contact)
-- [ ] Copied Service ID
-- [ ] Copied all 3 Template IDs
-- [ ] Copied Public Key
-- [ ] Updated `Catering.jsx` with credentials
-- [ ] Updated `Jobs.jsx` with credentials
-- [ ] Updated `Contact.jsx` with credentials
+- [ ] Created 2 templates (Catering, Jobs/Contact shared)
+- [ ] Updated Catering template "To Email" to `catering@noas.uk`
+- [ ] Updated Jobs/Contact template "To Email" to `operations@noas.uk`
 - [ ] Tested all 3 forms
-- [ ] Verified emails are being received
+- [ ] Verified emails are being received at correct addresses
 
 ---
 

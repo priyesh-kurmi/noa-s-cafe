@@ -20,20 +20,27 @@ const Contact = () => {
     setSubmitStatus(null)
     
     try {
-      // Send email using EmailJS
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_CONTACT_TEMPLATE_ID',
+      // Send email using EmailJS (reusing Jobs template)
+      console.log('Attempting to send contact email with data:', {
+        from_name: formData.name,
+        user_email: formData.email,
+        phone: formData.phone,
+        location: `${formData.enquiryType} - ${formData.message}`,
+      })
+      
+      const result = await emailjs.send(
+        'service_qnv4xb2',
+        'template_diit26o',  // Reusing Jobs template since both go to operations@noas.uk
         {
           from_name: formData.name,
           user_email: formData.email,
           phone: formData.phone,
-          enquiry_type: formData.enquiryType,
-          message: formData.message,
-          to_email: 'operations@noas.uk'
+          location: `[CONTACT FORM]\n\nEnquiry Type: ${formData.enquiryType}\n\nMessage:\n${formData.message}`,
         },
-        'YOUR_PUBLIC_KEY'
+        'Gn3B67ifhZvRHtfkb'
       )
+      
+      console.log('Contact email sent successfully:', result)
       
       // Clear form on success
       setFormData({
@@ -46,6 +53,7 @@ const Contact = () => {
       setSubmitStatus('success')
     } catch (error) {
       console.error('Error sending email:', error)
+      console.error('Error details:', error.text || error.message)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

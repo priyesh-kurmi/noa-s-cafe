@@ -23,10 +23,10 @@ const Catering = () => {
     setSubmitStatus(null)
 
     try {
-      // Replace these with your actual EmailJS credentials
+      // Send email using EmailJS
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID',        // Replace with your Service ID
-        'YOUR_CATERING_TEMPLATE_ID',  // Replace with your Catering Template ID
+        'service_qnv4xb2',
+        'template_wc6bi9s',
         {
           from_name: formData.name,
           user_email: formData.email,
@@ -37,7 +37,7 @@ const Catering = () => {
           event_date: formData.eventDate,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'         // Replace with your Public Key
+        'Gn3B67ifhZvRHtfkb'
       )
 
       console.log('Email sent successfully:', result.text)
