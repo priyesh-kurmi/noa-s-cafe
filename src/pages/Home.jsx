@@ -61,12 +61,12 @@ const Home = () => {
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(/images/ourcoffee2.jpg)',
+            backgroundImage: 'url(/images/herofinal.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
-          <div className="absolute inset-0 bg-rich-black/40"></div>
+          <div className="absolute inset-0 bg-rich-black/20"></div>
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
@@ -100,19 +100,13 @@ const Home = () => {
               href="https://noas.order.direct/order"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-coffee-brown text-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl relative z-50"
+              className="bg-white text-rich-black px-6 py-3 text-sm uppercase tracking-wider hover:bg-rich-black hover:text-white transition-all duration-300 w-[90%] sm:w-[220px] font-medium shadow-xl relative z-50"
             >
               Order Now
             </a>
             <Link
-              to="/locations"
-              className="border-2 border-coffee-brown text-coffee-brown bg-white px-8 py-4 text-sm uppercase tracking-wider hover:bg-coffee-brown hover:text-white transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl relative z-50"
-            >
-              Find a noa's Café
-            </Link>
-            <Link
               to="/catering"
-              className="border-2 border-rich-black text-white bg-rich-black px-8 py-4 text-sm uppercase tracking-wider hover:bg-white hover:text-rich-black hover:border-rich-black transition-all duration-300 w-full sm:w-[240px] font-medium shadow-xl relative z-50"
+              className="bg-white text-rich-black px-6 py-3 text-sm uppercase tracking-wider hover:bg-rich-black hover:text-white transition-all duration-300 w-[90%] sm:w-[220px] font-medium shadow-xl relative z-50"
             >
               Corporate Catering
             </Link>
