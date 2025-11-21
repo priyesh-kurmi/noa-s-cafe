@@ -100,13 +100,13 @@ const Home = () => {
               href="https://noas.order.direct/order"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-rich-black px-6 py-3 text-sm uppercase tracking-wider hover:bg-rich-black hover:text-white transition-all duration-300 w-[90%] sm:w-[220px] font-medium shadow-xl relative z-50"
+              className="bg-white text-rich-black px-6 py-3 text-sm uppercase tracking-wider hover:bg-rich-black hover:text-white transition-all duration-300 w-[60%] sm:w-[220px] font-medium shadow-xl relative z-50"
             >
               Order Now
             </a>
             <Link
               to="/catering"
-              className="bg-white text-rich-black px-6 py-3 text-sm uppercase tracking-wider hover:bg-rich-black hover:text-white transition-all duration-300 w-[90%] sm:w-[220px] font-medium shadow-xl relative z-50"
+              className="bg-white text-rich-black px-6 py-3 text-sm uppercase tracking-wider hover:bg-rich-black hover:text-white transition-all duration-300 w-[60%] sm:w-[220px] font-medium shadow-xl relative z-50"
             >
               Corporate Catering
             </Link>
